@@ -1,0 +1,42 @@
+[project]
+name = "pretix-helloasso"
+dynamic = ["version"]
+description = "Plugin to connect HelloAsso Checkout module"
+readme = "README.rst"
+license = {text = "Apache"}
+keywords = ["pretix"]
+authors = [
+    {name = "Loic Harrang", email = "loic.harrang@laposte.net*"},
+]
+maintainers = [
+    {name = "Loic Harrang", email = "loic.harrang@laposte.net*"},
+]
+
+dependencies = [
+]
+
+[project.entry-points."pretix.plugin"]
+pretix_helloasso = "pretix_helloasso:PretixPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+]
+
+[project.urls]
+homepage = "https://github.com/LoicHarrang/Pretix_HelloAsso.git"
+repository = "https://github.com/LoicHarrang/Pretix_HelloAsso.git"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "pretix_helloasso.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["pretix*"]
+namespaces = false

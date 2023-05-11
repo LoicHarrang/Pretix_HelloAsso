@@ -1,0 +1,5 @@
+[plugin]
+package = "pretix-helloasso"
+modules = [ "pretix_helloasso" ]
+marketplace_name = "helloasso"
+
